@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resources :vehicles, only: [:show, :index]
   devise_for :users
   root to: 'pages#home'
-  resources :vehicle, only: %i[new create]
+  resources :vehicle, only: %i[new create show index]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
