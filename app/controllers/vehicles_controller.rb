@@ -31,6 +31,11 @@ class VehiclesController < ApplicationController
     end
   end
 
+  def destroy
+    @vehicle.destroy
+    redirect_to vehicles_path
+  end
+
   private
 
   def set_vehicle
