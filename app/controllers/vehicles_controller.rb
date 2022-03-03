@@ -1,5 +1,6 @@
 class VehiclesController < ApplicationController
   before_action :set_vehicle, only: %i[edit update show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @vehicles = Vehicle.all
