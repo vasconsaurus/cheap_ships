@@ -6,25 +6,41 @@
       </div>
     </div>
   </div>
-  <div class="row mb-5">
+  <div class="row mb-3">
     <div class="col-12">
       <h2 class="mb-3"><%= @vehicle.name %></h2>
       <hr>
     </div>
   </div>
   <div class="row mb-5">
-    <div class="col-12">
-      <div class="card-body bg-secondary">
-        <p>Category: <%= @vehicle.category %></p>
-        <p>Year: <%= @vehicle.year %></p>
-        <p>Kilometer: <%= @vehicle.kilometer %></p>
-        <p>Price: $ <%= @vehicle.price %></p>
+    <div class="col-12 col-md-6">
+     <div class="card border-secondary mb-3">
+        <div class="card-header bg-transparent border-secondary pt-3">
+          <h5>Details</h5>
+        </div>
+        <div class="card-body bg-transparent bg-opacity-50">
+          <p class="mb-1"><strong>Category:</strong> <%= @vehicle.category %></p>
+          <p class="mb-1"><strong>Year:</strong> <%= @vehicle.year %></p>
+          <p class="mb-1"><strong>Kilometer: </strong><%= @vehicle.kilometer %></p>
+          <p class="mb-1"><strong>Price:</strong> $ <%= @vehicle.price %></p>
+        </div>
       </div>
-      <div class="card-body bg-secondary">
-        <p>Description: <%= @vehicle.description %></p>
+    </div>
+    <div class="col-12 col-md-6">
+     <div class="card border-secondary mb-3">
+        <div class="card-header bg-transparent border-secondary pt-3">
+          <h5>Description</h5>
+        </div>
+        <div class="card-body bg-transparent bg-opacity-50">
+          <p class="mb-1"><%= @vehicle.description %></p>
+        </div>
       </div>
     </div>
   </div>
+
+  <%= link_to vehicle_path(@vehicle), method: 'DELETE', data: { confirm: 'Are you sure?' } do %>
+  <p>Delete Vehicle</p>
+  <% end %>
 
   <%= link_to 'Back', root_path %>
 </div>
