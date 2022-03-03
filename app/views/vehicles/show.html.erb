@@ -1,17 +1,28 @@
 <div class="container">
   <div class="row">
     <div class="column">
-      <img src="<%= cl_image_path @vehicle.photo.key, crop: :fill %>">
+      <div class="card my-5">
+        <img src="<%= cl_image_path @vehicle.photo.key, crop: :fill %>">
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="column">
-      <h2><%= @vehicle.name %></h2>
-      <p>Category: <%= @vehicle.category %></p>
-      <p>Year: <%= @vehicle.year %></p>
-      <p>Kilometer: <%= @vehicle.kilometer %></p>
-      <p>Price: $ <%= @vehicle.price %></p>
-      <p>Description: <%= @vehicle.description %></p>
+  <div class="row mb-5">
+    <div class="col-12">
+      <h2 class="mb-3"><%= @vehicle.name %></h2>
+      <hr>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-12">
+      <div class="card-body bg-secondary">
+        <p>Category: <%= @vehicle.category %></p>
+        <p>Year: <%= @vehicle.year %></p>
+        <p>Kilometer: <%= @vehicle.kilometer %></p>
+        <p>Price: $ <%= @vehicle.price %></p>
+      </div>
+      <div class="card-body bg-secondary">
+        <p>Description: <%= @vehicle.description %></p>
+      </div>
     </div>
   </div>
 
