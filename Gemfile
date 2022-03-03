@@ -62,3 +62,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# keep our keys secret
+gem 'dotenv-rails', groups: [:development, :test]
+
+# to enable upload of image by user and cloud storage
+gem 'cloudinary', '~> 1.16.0'
