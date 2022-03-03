@@ -1,8 +1,14 @@
 class VehiclesController < ApplicationController
-  before_action :set_vehicle, only: %i[edit update]
+  before_action :set_vehicle, only: %i[edit update index show]
+
+  def index
+    @vehicles = Vehicle.all
+  end
+
+  def show
+  end
 
   def new
-    @vehicle = Vehicle.new
   end
 
   def create
