@@ -15,7 +15,7 @@ class VehiclesController < ApplicationController
 
   def create
     @vehicle = Vehicle.new(vehicle_params)
-
+    @vehicle.user = current_user
     if @vehicle.save
       redirect_to @vehicle, notice: 'Vehicle was successfully created.'
     else
