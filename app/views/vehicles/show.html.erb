@@ -1,2 +1,19 @@
-<h2><%= @vehicle.name %></h2>
-<p><%= @vehicle.category %></p>
+<div class="container">
+  <div class="row">
+    <div class="column">
+      <img src="<%= cl_image_path @vehicle.photo.key, crop: :fill %>">
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <h2><%= @vehicle.name %></h2>
+      <p>Category: <%= @vehicle.category %></p>
+      <p>Year: <%= @vehicle.year %></p>
+      <p>Kilometer: <%= @vehicle.kilometer %></p>
+      <p>Price: $ <%= @vehicle.price %></p>
+      <p>Description: <%= @vehicle.description %></p>
+    </div>
+  </div>
+
+  <%= link_to 'Back', root_path %>
+</div>
