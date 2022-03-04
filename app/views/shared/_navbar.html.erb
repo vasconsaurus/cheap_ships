@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://toppng.com/uploads/thumbnail/the-death-star-star-wars-death-star-115629029612usgbvb8j8.png" %>
     <% end %>
 
@@ -18,7 +18,7 @@
             <% if current_user.photo.attached? %>
               <%= cl_image_path current_user.photo.key, crop: :thumb, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
             <% else %>
-              <%= image_tag "logo.png", crop: :thumb, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= image_tag "avatar.jpg", crop: :thumb, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My Vehicles", "#", class: "dropdown-item" %>
