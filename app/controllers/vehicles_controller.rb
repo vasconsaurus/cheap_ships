@@ -1,5 +1,6 @@
 class VehiclesController < ApplicationController
-  before_action :set_vehicle, only: %i[edit update show]
+  before_action :set_vehicle, only: %i[edit update show destroy]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @vehicles = policy_scope(Vehicle)
@@ -9,6 +10,7 @@ class VehiclesController < ApplicationController
   end
 
   def new
+    @vehicle = Vehicle.new
     authorize @vehicle
   end
 
@@ -49,6 +51,6 @@ class VehiclesController < ApplicationController
   end
 
   def vehicle_params
-    params.require(:vehicle).permit(:name, :category, :price, :description, :kilometer, :year)
+    params.require(:vehicle).permit(:name, :category, :price, :description, :kilometer, :year, :photo)
   end
 end

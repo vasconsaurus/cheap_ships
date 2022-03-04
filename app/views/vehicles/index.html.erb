@@ -1,22 +1,24 @@
-<ul>
-  <% @vehicles.each do |vehicle| %>
-    <li><%= link_to vehicle.name, vehicle_path(vehicle) %></li>
-  <% end %>
-</ul>
-
-
-
-<%# *****Inserir código abaixo no bloco each*****  %>
-
-<%# if policy(vehicle).edit?
- link_to 'Edit', edit_vehicle_path(vehicle)
-end %>
-
-<%# if policy(vehicle).destroy?
- link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' }
-end %>
-
-
-<% if policy(Vehicle).new? %>
-  <%= link_to 'New Vehicle', new_vehicle_path %>
-<% end %>
+<div class="container">
+  <div class="row mt-5">
+    <% @vehicles.each do |vehicle| %>
+      <div class="col-12 col-md-6">
+        <div class="card my-3">
+          <% if vehicle.photo.attached? %>
+            <%= cl_image_tag vehicle.photo.key,
+                              height: 200, crop: :fill %>
+          <% else %>
+            <%= image_tag 'placeholder.jpg',
+                              height: 200, crop: :fill %>
+          <% end %>
+          <div class="card-body">
+            <h3 class="card-title mt-2"><%= link_to vehicle.name, vehicle_path(vehicle) %>
+            <%= link_to 'Order', vehicle_orders_path(vehicle) %></h3>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <% if user_signed_in? %>
+      <%= link_to 'New Vehicle', new_vehicle_path %>
+    <% end %>
+  </div>
+</div>
