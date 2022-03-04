@@ -50,3 +50,13 @@
 
   <%= link_to 'Back', root_path %>
 </div>
+
+
+
+<%# if policy(vehicle).edit?
+ link_to 'Edit', edit_vehicle_path(vehicle)
+end %>
+
+<%# if policy(vehicle).destroy?
+ link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' }
+end %>

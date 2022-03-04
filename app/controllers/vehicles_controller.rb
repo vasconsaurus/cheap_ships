@@ -3,7 +3,7 @@ class VehiclesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @vehicles = Vehicle.all
+    @vehicles = policy_scope(Vehicle)
   end
 
   def show
@@ -11,11 +11,15 @@ class VehiclesController < ApplicationController
 
   def new
     @vehicle = Vehicle.new
+    authorize @vehicle
   end
 
   def create
     @vehicle = Vehicle.new(vehicle_params)
     @vehicle.user = current_user
+
+    authorize @vehicle
+
     if @vehicle.save
       redirect_to @vehicle, notice: 'Vehicle was successfully created.'
     else
@@ -23,7 +27,8 @@ class VehiclesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     if @vehicle.update(vehicle_params)
@@ -42,6 +47,7 @@ class VehiclesController < ApplicationController
 
   def set_vehicle
     @vehicle = Vehicle.find(params[:id])
+    authorize @vehicle
   end
 
   def vehicle_params

@@ -26,5 +26,8 @@
         </div>
       </div>
     <% end %>
+    <% if user_signed_in? %>
+      <%= link_to 'New Vehicle', new_vehicle_path %>
+    <% end %>
   </div>
 </div>
