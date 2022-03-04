@@ -3,7 +3,7 @@
     <div class="column">
       <div class="card my-5">
           <% if @vehicle.photo.attached? %>
-            <%= cl_image_tag vehicle.photo.key,
+            <%= cl_image_tag @vehicle.photo.key,
                                crop: :fill %>
           <% else %>
             <%= image_tag 'placeholder.jpg' %>
@@ -43,6 +43,7 @@
     </div>
   </div>
 
+  <%= link_to "Edit Vehicle", edit_vehicle_path(@vehicle)%>
   <%= link_to vehicle_path(@vehicle), method: 'DELETE', data: { confirm: 'Are you sure?' } do %>
   <p>Delete Vehicle</p>
   <% end %>
