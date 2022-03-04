@@ -11,7 +11,8 @@
                               height: 200, crop: :fill %>
           <% end %>
           <div class="card-body">
-            <h3 class="card-title mt-2"><%= link_to vehicle.name, vehicle_path(vehicle) %></h3>
+            <h3 class="card-title mt-2"><%= link_to vehicle.name, vehicle_path(vehicle) %>
+            <%= link_to 'Order', vehicle_orders_path(vehicle) %></h3>
           </div>
         </div>
       </div>
