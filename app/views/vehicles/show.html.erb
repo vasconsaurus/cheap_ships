@@ -2,7 +2,12 @@
   <div class="row">
     <div class="column">
       <div class="card my-5">
-        <img src="<%= cl_image_path @vehicle.photo.key, crop: :fill %>">
+          <% if @vehicle.photo.attached? %>
+            <%= cl_image_tag vehicle.photo.key,
+                               crop: :fill %>
+          <% else %>
+            <%= image_tag 'placeholder.jpg' %>
+            <% end %>
       </div>
     </div>
   </div>
