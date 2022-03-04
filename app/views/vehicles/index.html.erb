@@ -2,17 +2,26 @@
   <div class="row mt-5">
     <% @vehicles.each do |vehicle| %>
       <div class="col-12 col-md-6">
-        <div class="card my-3">
+        <div class="">
           <% if vehicle.photo.attached? %>
-            <%= cl_image_tag vehicle.photo.key,
-                              height: 200, crop: :fill %>
+            <%= cl_image_tag vehicle.photo.key, class: "card-img-top" %>
           <% else %>
             <%= image_tag 'placeholder.jpg',
-                              height: 200, crop: :fill %>
+                                height: 200, crop: :fill %>
           <% end %>
-          <div class="card-body">
-            <h3 class="card-title mt-2"><%= link_to vehicle.name, vehicle_path(vehicle) %>
-            <%= link_to 'Order', vehicle_orders_path(vehicle) %></h3>
+          <div class="card border-secondary mb-3">
+            <div class="card-header bg-transparent border-secondary pt-3">
+              <h5><%= link_to vehicle.name, vehicle_path(vehicle) %></h5>
+            </div>
+            <div class="card-body bg-transparent card-size bg-opacity-50 border-end-0">
+              <p class="mb-1"><%= vehicle.description %></p>
+            </div>
+            <div class="card-footer bg-transparent bg-opacity-50 d-flex gap-2 border-top-0">
+              <button type="button" class="btn btn-dark btn-link align-self-end">
+              <%= link_to 'View Details', vehicle_path(vehicle) %></button>
+              <button type="button" class="btn btn-dark btn-link align-self-end">
+              <%= link_to 'Buy', vehicle_orders_path(vehicle) %></button>
+            </div>
           </div>
         </div>
       </div>
