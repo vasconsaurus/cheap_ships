@@ -1,4 +1,4 @@
-
+<div class="container w-50 justify-content-center">
 <%= simple_form_for(vehicle) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -17,3 +17,4 @@
     <%= f.button :submit, class: 'btn btn-primary' %>
   </div>
 <% end %>
+</div>
