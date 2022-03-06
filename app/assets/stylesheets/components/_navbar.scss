@@ -9,4 +9,19 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  margin-top: 0;
+}
+
+.logo-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.notice {
+  margin-bottom: 0;
 }
