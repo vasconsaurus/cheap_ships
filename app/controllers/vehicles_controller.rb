@@ -48,7 +48,7 @@ class VehiclesController < ApplicationController
 
   def set_vehicle
     @vehicle = Vehicle.find(params[:id])
-    authorize @vehicle
+      authorize @vehicle
   end
 
   def vehicle_params

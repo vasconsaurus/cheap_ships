@@ -5,11 +5,12 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :category %>
+    <%= f.input :category, as: :radio_buttons, collection: ['earth', 'air', 'water', 'space'] %>
     <%= f.input :price %>
     <%= f.input :description %>
     <%= f.input :kilometer %>
-    <%= f.input :year %>
+
+   <%= f.input :year, collection: 1800..2999 %>
     <%= f.input :photos, as: :file, input_html: { multiple: true} %>
   </div>
 
