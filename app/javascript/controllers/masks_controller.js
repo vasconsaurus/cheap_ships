@@ -12,14 +12,14 @@ export default class extends Controller {
         // se não estiver definido, vamos checar se ele tem um data action
         if ($input.dataset.action === undefined) {
           // se não tiver o data action, vamos colocar
-          $input.setAttribute('data-action', 'input->mask#inputmask');
+          $input.setAttribute('data-action', 'input->masks#inputmask');
         } else {
           // se ele já tiver, vamos adicionar
-          $input.dataset.action += " input->mask#inputmask"
+          $input.dataset.action += " input->masks#inputmask"
         }
         // esse mask vai ser o masks que setamos lá embaixo
         console.log(this.masks($input.dataset.mask, $input.value))
-        // $input.value = this.masks($input.dataset.mask, $input.value);
+        $input.value = this.masks($input.dataset.mask, $input.value);
       }
     })
   }
@@ -31,7 +31,7 @@ export default class extends Controller {
     const type = input.dataset.mask;
     if (type !== undefined) {
       // devolve pro form o valor formatado
-      // input.value = this.masks(type, input.value);
+      input.value = this.masks(type, input.value);
     }
   }
 
