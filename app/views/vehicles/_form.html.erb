@@ -1,4 +1,4 @@
-<div class="container w-50 justify-content-center">
+<div class="container w-50 justify-content-center" data-controller="masks" >
 <%= simple_form_for(vehicle) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -6,7 +6,7 @@
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :category, as: :radio_buttons, collection: ['earth', 'air', 'water', 'space'] %>
-    <%= f.input :price %>
+    <%= f.input :price, input_html: { data: { mask: 'currency' } } %>
     <%= f.input :description %>
     <%= f.input :kilometer %>
 
