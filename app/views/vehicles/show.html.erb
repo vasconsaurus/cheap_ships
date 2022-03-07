@@ -40,12 +40,12 @@
     </div>
   </div>
   <% if policy(@vehicle).edit? %>
-    <%= link_to "Edit Vehicle", edit_vehicle_path(@vehicle)%>
+    <%= link_to "Edit Vehicle", edit_vehicle_path(@vehicle), class: "btn btn-dark align-self-end"%>
   <% end %>
 
   <% if policy(@vehicle).destroy? %>
-    <%= link_to "Delete Vehicle", vehicle_path(@vehicle), method: 'DELETE', data: { confirm: 'Are you sure?' } %>
+    <%= link_to "Delete Vehicle", vehicle_path(@vehicle), method: 'DELETE', data: { confirm: 'Are you sure?' }, class: "btn btn-dark align-self-end" %>
   <% end %>
 
-  <%= link_to 'Back', root_path %>
+  <%= link_to 'Back', root_path, class: "btn btn-dark align-self-end" %>
 </div>
