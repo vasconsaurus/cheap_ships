@@ -52,6 +52,7 @@ class VehiclesController < ApplicationController
   end
 
   def vehicle_params
+    params[:vehicle][:price] = params[:vehicle][:price].gsub(/[,.]/, '')
     params.require(:vehicle).permit(:name, :category, :price, :description, :kilometer, :year, photos:[])
   end
 end
