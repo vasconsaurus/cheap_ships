@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
 
     if @order.save
       # @vehicle.update(available: false)
-      redirect_to vehicle_order_path(@vehicle.id, @order.id), notice: "Your vehicle has been purchased"
+      redirect_to vehicle_order_path(@vehicle.id, @order.id)
     else
       redirect_to vehicle_path(@vehicle.id), notice: "Failed"
     end
