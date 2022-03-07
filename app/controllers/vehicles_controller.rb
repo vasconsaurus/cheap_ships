@@ -4,6 +4,7 @@ class VehiclesController < ApplicationController
 
   def index
     @vehicles = policy_scope(Vehicle)
+    @order = Order.new
   end
 
   def show
