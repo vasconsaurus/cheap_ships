@@ -22,12 +22,13 @@ style="background-image: url('https://cdn.dribbble.com/users/891352/screenshots/
             <div class="card-header bg-transparent border-secondary pt-3">
               <h5><%= link_to vehicle.name, vehicle_path(vehicle) %></h5>
             </div>
-            <div class="card-body bg-transparent card-size bg-opacity-50 border-end-0">
+            <div class="card-body bg-transparent card-size bg-opacity-50 overflow-auto">
               <p class="mb-1"><%= vehicle.description %></p>
             </div>
-            <div class="card-footer bg-transparent bg-opacity-50 d-flex gap-2 border-top-0">
+            <div class="card-footer bg-transparent bg-opacity-50 d-flex gap-2 border-secondary">
               <button type="button" class="btn btn-dark align-self-end">
-              <%= link_to 'View Details', vehicle_path(vehicle) %></button>
+                <%= link_to 'View Details', vehicle_path(vehicle) %>
+              </button>
               <%= simple_form_for([vehicle, @order]) do |f| %>
                   <%= f.input :vehicle_id, as: :hidden, value: vehicle.id %>
                   <%= f.input :user_id, as: :hidden, value: current_user&.id %>
