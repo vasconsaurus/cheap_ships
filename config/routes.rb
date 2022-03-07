@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
 
-  resources :vehicles, only: %i[new create edit show index destroy] do
+  resources :vehicles, only: %i[new create edit show update index destroy] do
     resources :orders, only: %i[new create show]
   end
 
