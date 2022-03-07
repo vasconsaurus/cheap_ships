@@ -2,15 +2,12 @@
   <div class="row">
     <div class="column">
       <div class="card my-5">
-          <% if @vehicle.photo.attached? %>
-            <%= cl_image_tag @vehicle.photo.key,
-                               crop: :fill %>
-          <% else %>
-            <%= image_tag 'placeholder.jpg' %>
-          <% end %>
       </div>
     </div>
   </div>
+
+        <%=render "carouselshow"%>
+
   <div class="row mb-3">
     <div class="col-12">
       <h2 class="mb-3"><%= @vehicle.name %></h2>
