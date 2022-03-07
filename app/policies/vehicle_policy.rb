@@ -33,6 +33,6 @@ class VehiclePolicy < ApplicationPolicy
   private
 
   def is_owner_or_admin?
-    record.user == user || user.admin
+    record.user == user
   end
 end
