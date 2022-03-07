@@ -1,7 +1,7 @@
 class Vehicle < ApplicationRecord
   belongs_to :user
   has_one :order, dependent: :destroy
-  has_one_attached :photo
+  has_many_attached :photos
 
   validates :name,        presence: true,
                           uniqueness: true
@@ -13,7 +13,7 @@ class Vehicle < ApplicationRecord
                           numericality: true
   validates :year,        presence: true,
                           numericality: true,
-                          inclusion: { in: 1800..Date.today.year },
+                          inclusion: { in: 0..Date.today.year },
                           format: {
                             with: /(18|19|20)\d{2}/i,
                             message: "should be a four-digit year"
