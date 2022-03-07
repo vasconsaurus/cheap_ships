@@ -13,7 +13,7 @@ style="background-image: url('https://cdn.dribbble.com/users/891352/screenshots/
       <div class="col-12 col-md-6">
         <div class="">
           <% if vehicle.photo.attached? %>
-            <%= cl_image_tag vehicle.photo.key, class: "card-img-top" %>
+            <%= cl_image_tag vehicle.photo.key, :crop=>"lfill", class: "card-img-top" %>
           <% else %>
             <%= image_tag 'placeholder.jpg',
                                 height: 200, crop: :fill %>
