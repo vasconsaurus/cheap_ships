@@ -13,7 +13,7 @@ style="background-image: url('https://cdn.dribbble.com/users/891352/screenshots/
       <div class="col-12 col-md-6">
         <div class="">
           <% if vehicle.photo.attached? %>
-            <%= cl_image_tag vehicle.photo.key, class: "card-img-top" %>
+            <%= cl_image_tag vehicle.photo.key, :crop=>"lfill", class: "card-img-top" %>
           <% else %>
             <%= image_tag 'placeholder.jpg',
                                 height: 200, crop: :fill %>
@@ -22,16 +22,21 @@ style="background-image: url('https://cdn.dribbble.com/users/891352/screenshots/
             <div class="card-header bg-transparent border-secondary pt-3">
               <h5><%= link_to vehicle.name, vehicle_path(vehicle) %></h5>
             </div>
-            <div class="card-body bg-transparent card-size bg-opacity-50 border-end-0">
+            <div class="card-body bg-transparent card-size bg-opacity-50 overflow-auto">
               <p class="mb-1"><%= vehicle.description %></p>
             </div>
+
             <div class="card-footer bg-transparent bg-opacity-50 d-flex gap-2 border-top-0">
-              <button type="button" class="btn btn-dark align-self-end">
-              <%= link_to 'View Details', vehicle_path(vehicle) %></button>
-              <%= simple_form_for([vehicle, @order]) do |f| %>
-                  <%= f.input :vehicle_id, as: :hidden, value: vehicle.id %>
-                  <%= f.input :user_id, as: :hidden, value: current_user&.id %>
-                  <%= f.button :submit, class: "btn btn-dark align-self-end" %>
+              <%= link_to 'View Details', vehicle_path(vehicle), class: "btn btn-dark align-self-end" %>
+              <% if vehicle.user == current_user %>
+                <%= link_to 'Delete Vehicle', vehicle_path(vehicle), method: 'DELETE', data: { confirm: 'Are you sure?' }, class: "btn btn-dark align-self-end" %>
+                <% else %>
+                <%= simple_form_for([vehicle, @order]) do |f| %>
+                    <%= f.input :vehicle_id, as: :hidden, value: vehicle.id %>
+                    <%= f.input :user_id, as: :hidden, value: current_user.id %>
+                    <%= f.button :submit, class: "btn btn-dark align-self-end" %>
+                <% end %>
+
               <% end %>
             </div>
           </div>

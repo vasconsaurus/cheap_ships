@@ -1,5 +1,4 @@
 class OrderPolicy < ApplicationPolicy
-
   def create?
     record.user.present?
   end

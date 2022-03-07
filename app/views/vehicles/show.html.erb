@@ -42,21 +42,13 @@
       </div>
     </div>
   </div>
+  <% if policy(@vehicle).edit? %>
+    <%= link_to "Edit Vehicle", edit_vehicle_path(@vehicle)%>
+  <% end %>
 
-  <%= link_to "Edit Vehicle", edit_vehicle_path(@vehicle)%>
-  <%= link_to vehicle_path(@vehicle), method: 'DELETE', data: { confirm: 'Are you sure?' } do %>
-  <p>Delete Vehicle</p>
+  <% if policy(@vehicle).destroy? %>
+    <%= link_to "Delete Vehicle", vehicle_path(@vehicle), method: 'DELETE', data: { confirm: 'Are you sure?' } %>
   <% end %>
 
   <%= link_to 'Back', root_path %>
 </div>
-
-
-
-<%# if policy(vehicle).edit?
- link_to 'Edit', edit_vehicle_path(vehicle)
-end %>
-
-<%# if policy(vehicle).destroy?
- link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' }
-end %>
