@@ -22,8 +22,7 @@ style="background-image: url('https://cdn.dribbble.com/users/891352/screenshots/
           <% if vehicle.photos.attached? %>
             <%= cl_image_tag vehicle.photos[0].key, class: "card-img-top" %>
           <% else %>
-            <%= image_tag 'placeholder.jpg',
-                                height: 200, crop: :fill %>
+            <%= image_tag 'placeholder.jpg', class: "card-img-top" %>
           <% end %>
           <div class="card border-secondary mb-3">
             <div class="card-header bg-transparent border-secondary pt-3">
