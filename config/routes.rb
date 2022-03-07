@@ -6,5 +6,4 @@ Rails.application.routes.draw do
   end
 
   root to: 'vehicles#index'
-
 end

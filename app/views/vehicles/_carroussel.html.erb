@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+<div class= "w-50" >
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+  </ol>
+
+  <div class="carousel-inner" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7)" >
+      <% vehicles.each_with_index do |vehicle, index| %>
+        <div class="carousel-item <%= index.zero? ? "active" : "" %>">
+           <% if vehicle.photos.attached? %>
+             <%= cl_image_tag vehicle.photos[0].key, class: "d-block w-100" %>
+           <% else %>
+             <%= image_tag 'placeholder.jpg', class: "d-block w-100", crop: :fill %>
+          <% end %>
+
+              <div class="carousel-caption d-none d-md-block shadowboxer">
+               <h4> <%= vehicle.name %> </h4>
+                <p> <%= vehicle.description %></p>
+              </div>
+
+        </div>
+      <% end %>
+  </div>
+
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+</div>
