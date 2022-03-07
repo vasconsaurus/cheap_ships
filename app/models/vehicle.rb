@@ -1,7 +1,7 @@
 class Vehicle < ApplicationRecord
   belongs_to :user
   has_one :order, dependent: :destroy
-  has_one_attached :photo
+  has_many_attached :photos
 
   validates :name,        presence: true,
                           uniqueness: true
