@@ -5,11 +5,10 @@ class Vehicle < ApplicationRecord
 
   validates :name,        presence: true,
                           uniqueness: true
-  validates :category,    presence: true,
-                          uniqueness: true
+  validates :category,    presence: true
   validates :price,       presence: true
   validates :description, presence: true,
-                          length: { minimum: 6 }
+                          length: { within: 6..350 }
   validates :kilometer,   presence: true,
                           numericality: true
   validates :year,        presence: true,
