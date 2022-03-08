@@ -5,6 +5,11 @@ class VehiclesController < ApplicationController
   def index
     @vehicles = policy_scope(Vehicle)
     @order = Order.new
+    if params[:query].present?
+      @vehicle = Vehicle.global_search(params[:query]).where(available: true)
+    else
+      @vehicle = Vehicle.all.where(available: true)
+    end
   end
 
   def show
@@ -44,6 +49,7 @@ class VehiclesController < ApplicationController
     redirect_to vehicles_path
   end
 
+
   def my_vehicles
     @vehicles = policy_scope(Vehicle)
     authorize Vehicle
@@ -61,4 +67,6 @@ class VehiclesController < ApplicationController
   def vehicle_params
     params.require(:vehicle).permit(:name, :category, :price, :description, :kilometer, :year, photos:[])
   end
+
+
 end
