@@ -1,14 +1,17 @@
 <div
-class="bg-image d-flex justify-content-center align-items-center text-center mb-5 text-white mt-0"
-style="background-image: url('https://cdn.dribbble.com/users/891352/screenshots/2535126/media/15629971e40c0f5c4d43af9f892db706.gif'); height: 35vh">
+class="bg-image d-flex justify-content-center align-items-center text-center mb-5 text-white mt-0">
   <div>
-    <h1 class="fw-bold">Cheap Ships</h1>
-    <p class="">Buy and sell the perfect ride.</p>
+     <%= render "glitch_cheap_ships" %>
   </div>
 </div>
 
- <%# <%= render "carroussel", vehicles: @vehicles.first(5)%> %>
- <%= render 'search-bar' %>
+<% if @vehicles.length > 5 %>
+ <%= render "carroussel", vehicles: @vehicles.first(5)%>
+ <%else %>
+ <%= render "carroussel", vehicles: @vehicles%>
+ <% end %>
+
+  <%= render 'search-bar' %>
 
 <div class="container">
     <% if user_signed_in? %>
