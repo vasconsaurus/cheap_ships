@@ -19,4 +19,11 @@ class OrdersController < ApplicationController
 
     authorize @order
   end
+
+  def destroy
+    @order = Order.find(params[:id])
+    authorize @order
+    @order.destroy
+    redirect_to my_vehicles_path
+  end
 end
