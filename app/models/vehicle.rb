@@ -25,4 +25,5 @@ class Vehicle < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
 end
