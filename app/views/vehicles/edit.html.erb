@@ -1,6 +1,7 @@
+<div class="container">
+  <h1 class="title-form">Editing vehicle</h1>
 
-<h1>Editing vehicle</h1>
+  <%= render 'form', vehicle: @vehicle %>
 
-<%= render 'form', vehicle: @vehicle %>
-
-<%= link_to 'Back', vehicles_path %>
+  <%= link_to 'Back', vehicles_path %>
+</div>
