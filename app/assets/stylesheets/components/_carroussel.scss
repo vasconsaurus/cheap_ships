@@ -4,3 +4,9 @@
 .carousel-item {
   transition: transform 1s ease, opacity .5s ease-out
 }
+
+.carroussel-img-size {
+  height: 210px;
+  object-fit: cover;
+  width: 100%;
+}
