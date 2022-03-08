@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :orders, only: %i[new create show]
   end
 
-  get 'my_vehicles', to: 'vehicles#my_vehicles'
+  resources :orders, only: :destroy
+
+  get 'my_vehicles', to: 'vehicles#my_vehicles', as: 'my_vehicles'
   root to: 'vehicles#index'
 end

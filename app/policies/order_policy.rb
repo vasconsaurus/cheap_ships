@@ -7,4 +7,8 @@ class OrderPolicy < ApplicationPolicy
     true
     # se o order pertence ao usuario e se o veiculo pertence ao order
   end
+
+  def destroy?
+    record.user == user
+  end
 end
