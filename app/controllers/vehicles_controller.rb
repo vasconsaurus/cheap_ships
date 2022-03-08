@@ -49,7 +49,6 @@ class VehiclesController < ApplicationController
     redirect_to vehicles_path
   end
 
-
   def my_vehicles
     @vehicles = policy_scope(Vehicle)
     authorize Vehicle
