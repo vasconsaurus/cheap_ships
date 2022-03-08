@@ -50,6 +50,12 @@ class VehiclesController < ApplicationController
   end
 
 
+  def my_vehicles
+    @vehicles = policy_scope(Vehicle)
+    authorize Vehicle
+    @vehicles = @vehicles.where(user: current_user)
+    @vehicles_ordered = Vehicle.joins(:order).where(order: current_user.orders)
+  end
 
   private
 

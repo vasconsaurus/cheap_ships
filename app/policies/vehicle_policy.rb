@@ -2,7 +2,7 @@ class VehiclePolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-      scope.all
+      scope.includes(:order).where(orders: { id: nil })
     end
   end
 
@@ -28,6 +28,10 @@ class VehiclePolicy < ApplicationPolicy
 
   def destroy?
     is_owner_or_admin?
+  end
+
+  def my_vehicles?
+    user.admin
   end
 
   private
