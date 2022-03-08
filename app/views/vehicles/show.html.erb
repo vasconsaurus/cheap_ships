@@ -45,6 +45,12 @@
 
   <% if policy(@vehicle).destroy? %>
     <%= link_to "Delete Vehicle", vehicle_path(@vehicle), method: 'DELETE', data: { confirm: 'Are you sure?' }, class: "btn btn-dark align-self-end" %>
+  <% else %>
+    <%= simple_form_for([@vehicle, @order]) do |f| %>
+      <%= f.input :vehicle_id, as: :hidden, value: @vehicle.id %>
+      <%= f.input :user_id, as: :hidden, value: current_user&.id %>
+      <%= f.button :submit, 'Buy it Now!', class: "btn btn-dark align-self-end" %>
+    <% end %>
   <% end %>
 
   <%= link_to 'Back', root_path, class: "btn btn-dark align-self-end" %>
