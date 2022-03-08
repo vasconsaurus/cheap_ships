@@ -11,9 +11,53 @@
 h5 a {
   text-decoration: none;
   font-weight: bold;
-  color: black;
+  color: #fff;
 }
 
+h5 a:hover{
+  color: #fff !important;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa
+    !important
+  }
+
+
 .btn-dark a {
-  color: white;
+  color: rgb(15, 15, 15);
+}
+
+.card{
+  background-color: black;
+}
+
+.border-secondary:hover {
+
+    box-shadow: 2px 1px 1px 1px #0fa;
+
+    a {
+      color: #fff !important;
+      text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa,
+      0 0 92px #0fa,
+      0 0 102px #0fa,
+      0 0 151px #0fa
+      !important
+
+    }
+
+}
+
+.mb-1{
+  color: rgb(245, 244, 244);
 }
