@@ -24,7 +24,7 @@
           <p class="mb-1"><strong>Category:</strong> <%= @vehicle.category %></p>
           <p class="mb-1"><strong>Year:</strong> <%= @vehicle.year %></p>
           <p class="mb-1"><strong>Kilometer: </strong><%= @vehicle.kilometer %></p>
-          <p class="mb-1"><strong>Price:</strong> <%= number_to_currency(@vehicle.price.to_f / 100) %></p>
+          <p class="mb-1"><strong>Price:</strong> <%= (@vehicle.price.to_f / 100) %></p>
         </div>
       </div>
     </div>
