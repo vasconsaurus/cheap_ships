@@ -22,8 +22,11 @@ class VehiclesController < ApplicationController
   end
 
   def create
+
     @vehicle = Vehicle.new(vehicle_params)
     @vehicle.user = current_user
+    @vehicle.price = params[:vehicle][:price].delete(".").delete(",").to_i
+
 
     authorize @vehicle
 
@@ -65,7 +68,7 @@ class VehiclesController < ApplicationController
   end
 
   def vehicle_params
-    params.require(:vehicle).permit(:name, :category, :price, :description, :kilometer, :year, photos:[])
+    params.require(:vehicle).permit(:name, :category,  :description, :kilometer, :year, photos:[])
   end
 
 

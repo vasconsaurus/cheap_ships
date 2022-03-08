@@ -20,14 +20,14 @@ class="bg-image d-flex justify-content-center align-items-center text-center mb-
   <div class="row mt-5">
     <% @vehicles.each do |vehicle| %>
       <div class="col-12 col-md-6">
-        <div class="">
 
-          <% if vehicle.photos.attached? %>
-            <%= cl_image_tag vehicle.photos[0].key, class: "card-img-top" %>
-          <% else %>
-            <%= image_tag 'placeholder.jpg', class: "card-img-top" %>
-          <% end %>
-          <div class="card border-secondary mb-3">
+
+          <div class="card card-neon border-secondary mb-3">
+            <% if vehicle.photos.attached? %>
+              <%= cl_image_tag vehicle.photos[0].key, class: "card-img-top" %>
+            <% else %>
+              <%= image_tag 'placeholder.jpg', class: "card-img-top" %>
+            <% end %>
             <div class="card-header bg-transparent border-secondary pt-3">
               <h5><%= link_to vehicle.name, vehicle_path(vehicle) %></h5>
             </div>
@@ -35,19 +35,19 @@ class="bg-image d-flex justify-content-center align-items-center text-center mb-
               <p class="mb-1"><%= vehicle.description %></p>
             </div>
             <div class="card-footer bg-transparent bg-opacity-50 d-flex gap-2 border-top-0">
-              <%= link_to 'View Details', vehicle_path(vehicle), class: "details btn btn-dark align-self-end" %>
+              <%= link_to 'View Details', vehicle_path(vehicle), class: "btn-glow btn btn-outline-light align-self-end" %>
               <% if vehicle.user == current_user %>
-                <%= link_to 'Delete Vehicle', vehicle_path(vehicle), method: 'DELETE', data: { confirm: 'Are you sure?' }, class: "orders btn btn-dark align-self-end" %>
+                <%= link_to 'Delete Vehicle', vehicle_path(vehicle), method: 'DELETE', data: { confirm: 'Are you sure?' }, class: "btn-glow btn btn-outline-danger align-self-end" %>
                 <% else %>
                 <%= simple_form_for([vehicle, @order]) do |f| %>
                     <%= f.input :vehicle_id, as: :hidden, value: vehicle.id %>
                     <%= f.input :user_id, as: :hidden, value: current_user&.id %>
-                    <%= f.button :submit, class: "btn btn-dark align-self-end" %>
+                    <%= f.button :submit, class: "btn-glow-pink btn btn-outline-light align-self-end" %>
                 <% end %>
               <% end %>
             </div>
           </div>
-        </div>
+
       </div>
     <% end %>
   </div>

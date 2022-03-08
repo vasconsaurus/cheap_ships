@@ -4,7 +4,7 @@
   height: 300px;
 }
 
-.card-img-top :hover {
+.card-neon:hover {
   box-shadow: 2px 1px 1px 1px #0fa;
 }
 
@@ -12,33 +12,7 @@
   height: 10rem;
 }
 
-.details :hover{
-  color: #fff !important;
-  text-shadow:
-  0 0 7px #fff,
-  0 0 10px #fff,
-  0 0 21px #fff,
-  0 0 42px #0fa,
-  0 0 82px #0fa,
-  0 0 92px #0fa,
-  0 0 102px #0fa,
-  0 0 151px #0fa
-  !important
-}
 
-.orders :hover{
-  color: #fff !important;
-  text-shadow:
-  0 0 7px #fff,
-  0 0 10px #fff,
-  0 0 21px #fff,
-  0 0 42px #0fa,
-  0 0 82px #0fa,
-  0 0 92px #0fa,
-  0 0 102px #0fa,
-  0 0 151px #0fa
-  !important
-}
 
 h5 a {
   text-decoration: none;
@@ -46,24 +20,11 @@ h5 a {
   color: #fff;
 }
 
-.card-header a:hover{
-  color: #fff !important;
-    text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px #0fa,
-    0 0 82px #0fa,
-    0 0 92px #0fa,
-    0 0 102px #0fa,
-    0 0 151px #0fa
-    !important
-  }
 
 
 .btn-dark a {
   color: rgb(15, 15, 15);
-
+  border: 5px;
 }
 // .btn-dark :hover {
 //   box-shadow: 2px 1px 1px 1px #0fa;
@@ -73,28 +34,57 @@ h5 a {
   background-color: black;
 }
 
-.border-secondary:hover {
 
-    box-shadow: 2px 1px 1px 1px #0fa;
-
-
-}
 
 .mb-1{
   color: rgb(245, 244, 244);
 }
 
 
-card-header {
+.card-header a:hover {
   color: #fff !important;
-    text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px #0fa,
-    0 0 82px #0fa,
-    0 0 92px #0fa,
-    0 0 102px #0fa,
-    0 0 151px #0fa
-    !important
+  text-shadow:
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+  0 0 42px #0fa,
+  0 0 82px #0fa,
+  0 0 92px #0fa,
+  0 0 102px #0fa,
+  0 0 151px #0fa
+  !important
+}
+
+.btn-glow:hover {
+  color: #fff !important;
+  text-shadow:
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+  0 0 42px #0fa,
+  0 0 82px #0fa,
+  0 0 92px #0fa,
+  0 0 102px #0fa,
+  0 0 151px #0fa
+  !important
+}
+
+
+.btn-glow-pink:hover {
+  background-color: blueviolet;
+  color: #fff !important;
+  text-shadow:
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+  0 0 42px rgb(247, 0, 255),
+  0 0 82px rgb(247, 0, 255),
+  0 0 92px rgb(247, 0, 255),
+  0 0 102px rgb(247, 0, 255),
+  0 0 151px rgb(247, 0, 255)
+  !important
+}
+.btn-glow-pink{
+  border: 2px;
+  outline: 3px;
 }
