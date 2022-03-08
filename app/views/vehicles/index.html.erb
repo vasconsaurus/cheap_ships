@@ -8,7 +8,7 @@ style="background-image: url('https://cdn.dribbble.com/users/891352/screenshots/
 </div>
 
  <%= render "carroussel", vehicles: @vehicles.first(5)%>
-
+  <%= render 'search-bar' %>
 
 <div class="container">
     <% if user_signed_in? %>
