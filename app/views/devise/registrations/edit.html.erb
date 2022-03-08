@@ -31,10 +31,10 @@
     <%= f.button :submit, "Update" %>
   </div>
 <% end %>
-<div class="form-actions">
-<%= link_to "Cancel my account", registration_path(resource_name), class:"btn btn-link", data: { confirm: "Are you sure?" }, method: :delete %>
-</div>
-<div class="container">
-<%= link_to 'Back', root_path, class: "btn btn-dark align-self-end" %>
-</div>
+  <div class="form-actions">
+    <%= link_to "Cancel my account", registration_path(resource_name), class:"btn btn-link", data: { confirm: "Are you sure?" }, method: :delete %>
+  </div>
+  <div class="container">
+    <%= link_to 'Back', root_path, class: "btn btn-dark align-self-end" %>
+  </div>
 </div>

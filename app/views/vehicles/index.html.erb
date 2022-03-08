@@ -42,7 +42,7 @@ class="bg-image d-flex justify-content-center align-items-center text-center mb-
                 <%= simple_form_for([vehicle, @order]) do |f| %>
                     <%= f.input :vehicle_id, as: :hidden, value: vehicle.id %>
                     <%= f.input :user_id, as: :hidden, value: current_user&.id %>
-                    <%= f.button :submit, class: "btn-glow-pink btn btn-outline-light align-self-end" %>
+                    <%= f.button :submit, 'Buy it Now!', class: "btn btn-dark align-self-end" %>
                 <% end %>
               <% end %>
             </div>
