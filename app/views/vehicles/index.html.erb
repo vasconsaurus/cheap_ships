@@ -37,12 +37,12 @@ class="bg-image d-flex justify-content-center align-items-center text-center mb-
             <div class="card-footer bg-transparent bg-opacity-50 d-flex gap-2 border-top-0">
               <%= link_to 'View Details', vehicle_path(vehicle), class: "btn-glow btn btn-outline-light align-self-end" %>
               <% if vehicle.user == current_user %>
-                <%= link_to 'Delete Vehicle', vehicle_path(vehicle), method: 'DELETE', data: { confirm: 'Are you sure?' }, class: "btn-glow btn btn-outline-danger align-self-end" %>
+                <%= link_to 'Delete Vehicle', vehicle_path(vehicle), method: 'DELETE', data: { confirm: 'Are you sure?' }, class: "btn-glow-danger btn btn-danger align-self-end" %>
                 <% else %>
                 <%= simple_form_for([vehicle, @order]) do |f| %>
                     <%= f.input :vehicle_id, as: :hidden, value: vehicle.id %>
                     <%= f.input :user_id, as: :hidden, value: current_user&.id %>
-                    <%= f.button :submit, 'Buy it Now!', class: "btn btn-dark align-self-end" %>
+                    <%= f.button :submit, 'Buy it Now!', class: "btn-buy btn align-self-end" %>
                 <% end %>
               <% end %>
             </div>

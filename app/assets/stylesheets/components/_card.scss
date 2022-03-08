@@ -23,7 +23,7 @@ h5 a {
 
 
 .btn-dark a {
-  color: rgb(15, 15, 15);
+  color: rgb(255, 255, 255);
   border: 5px;
 }
 // .btn-dark :hover {
@@ -55,7 +55,9 @@ h5 a {
   !important
 }
 
+
 .btn-glow:hover {
+  background-color: transparent;
   color: #fff !important;
   text-shadow:
   0 0 7px #fff,
@@ -87,4 +89,39 @@ h5 a {
 .btn-glow-pink{
   border: 2px;
   outline: 3px;
+}
+
+.btn-buy:hover {
+  background-color: rgb(224, 15, 251);
+  color: #fff !important;
+  text-shadow:
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+  0 0 42px rgb(247, 0, 255),
+  0 0 82px rgb(247, 0, 255),
+  0 0 92px rgb(247, 0, 255),
+  0 0 102px rgb(247, 0, 255),
+  0 0 151px rgb(247, 0, 255)
+  !important
+}
+
+.btn-buy{
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.btn-glow-danger:hover{
+  background-color: red;
+  color: #fff !important;
+  text-shadow:
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+  0 0 42px #0fa,
+  0 0 82px #0fa,
+  0 0 92px #0fa,
+  0 0 102px #0fa,
+  0 0 151px #0fa
+  !important
 }
