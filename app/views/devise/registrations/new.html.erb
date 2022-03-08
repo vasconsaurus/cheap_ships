@@ -1,7 +1,7 @@
 
 <div class="container w-50">
 
-<h2>Sign up</h2>
+<h2 class="title-form">Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -24,17 +24,11 @@
                 required: true%>
   </div>
 
-  <div class="form-actions">
-
-  </div>
-
   <div class="form-actions btn btn-success">
-
     <%= f.button :submit, "Sign up" %>
   </div>
 <% end %>
-<p></p>
-<p></p>
+
 <%= render "devise/shared/links" %>
 <%= link_to 'Back', root_path, class: "btn btn-dark align-self-end" %>
 </div>
