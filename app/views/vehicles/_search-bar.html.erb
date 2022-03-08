@@ -1,0 +1,10 @@
+<%= form_tag vehicles_path, class: "row g-3 d-flex justify-content-center ", method: :get do %>
+  <div class="col-auto d-flex  justify-content-between w-50 p-2">
+    <%= text_field_tag :query,
+      params[:query],
+      class: "flex-grow-1",
+      placeholder: "Find an Item"
+    %>
+    <%= submit_tag "Search", class: "ml-2 btn-purple" %>
+  </div>
+<% end %>

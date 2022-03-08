@@ -6,7 +6,7 @@ class="bg-image d-flex justify-content-center align-items-center text-center mb-
 </div>
 
  <%= render "carroussel", vehicles: @vehicles.first(5)%>
-
+  <%= render 'search-bar' %>
 
 <div class="container">
     <% if user_signed_in? %>
