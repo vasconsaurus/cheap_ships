@@ -2,3 +2,18 @@ a {
   text-decoration: none;
   color: white;
 }
+
+.footer {
+  bottom: 0;
+  position: absolute;
+  width: 100vw;
+  background-color: black;
+}
+
+.hr-top {
+  border: 2px solid #0fa;
+}
+
+.hr-middle {
+  border: 0.5px solid #0fa;
+}
