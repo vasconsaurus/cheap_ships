@@ -39,7 +39,7 @@ style="background-image: url('https://cdn.dribbble.com/users/891352/screenshots/
                 <%= simple_form_for([vehicle, @order]) do |f| %>
                     <%= f.input :vehicle_id, as: :hidden, value: vehicle.id %>
                     <%= f.input :user_id, as: :hidden, value: current_user&.id %>
-                    <%= f.button :submit, class: "btn btn-dark align-self-end" %>
+                    <%= f.button :submit, 'Buy it Now!', class: "btn btn-dark align-self-end" %>
                 <% end %>
               <% end %>
             </div>
