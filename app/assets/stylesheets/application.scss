@@ -13,7 +13,10 @@
 @import "pages/index";
 
 
-p {
+p, label {
   color: white;
 }
 
+body {
+  position: relative;
+}
