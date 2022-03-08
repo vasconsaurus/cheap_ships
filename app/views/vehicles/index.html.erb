@@ -4,8 +4,12 @@ class="bg-image d-flex justify-content-center align-items-center text-center mb-
      <%= render "glitch_cheap_ships" %>
   </div>
 </div>
-
+<% if @vehicles.length > 5 %>
  <%= render "carroussel", vehicles: @vehicles.first(5)%>
+ <%else %>
+ <%= render "carroussel", vehicles: @vehicles%>
+ <% end %>
+
   <%= render 'search-bar' %>
 
 <div class="container">

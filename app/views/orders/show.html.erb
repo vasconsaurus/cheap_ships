@@ -1,7 +1,7 @@
 
 
-<div class="container">
-  <div class="row d-flex justify-space-between">
+<div class="container ">
+  <div class="row justify-content-between align-items-center glitch-height">
 
     <div class="col-12 col-md-6">
       <h2 class="my-5">Thanks for buying at Cheap Ships!</h2>
@@ -9,13 +9,13 @@
 
       <p class="mb-0"> You are now the happy owner of the <%= @vehicle.name %>!</p>
       <p> It will be delivered to you at the blink of an eye.</p>
+    <%= link_to 'Back', vehicles_path, class: "btn btn-dark align-self-end" %>
     </div>
 
-    <div class="col-12 col-md-6 align-self-center">
+    <div class="col-12 col-md-6">
       <%= render "glitch_order" %>
     </div>
 
 
-    <%= link_to 'Back', vehicles_path, class: "btn btn-dark align-self-end" %>
   </div>
 </div>
