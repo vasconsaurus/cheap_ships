@@ -18,4 +18,11 @@ class Vehicle < ApplicationRecord
                             with: /(18|19|20)\d{2}/i,
                             message: "should be a four-digit year"
                           }
+
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :name, :category, :price, :description, :year ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
