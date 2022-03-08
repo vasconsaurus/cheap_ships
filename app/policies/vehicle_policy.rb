@@ -31,7 +31,7 @@ class VehiclePolicy < ApplicationPolicy
   end
 
   def my_vehicles?
-    user.admin
+    true
   end
 
   private
