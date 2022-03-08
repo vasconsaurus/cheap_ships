@@ -8,12 +8,11 @@ class VehiclesController < ApplicationController
 
     if params[:query].present?
       @vehicles = Vehicle.global_search(params[:query])
-    else
-      @vehicles = Vehicle.all
     end
   end
 
   def show
+    @order = Order.new
   end
 
   def new
@@ -67,6 +66,4 @@ class VehiclesController < ApplicationController
   def vehicle_params
     params.require(:vehicle).permit(:name, :category, :price, :description, :kilometer, :year, photos:[])
   end
-
-
 end
