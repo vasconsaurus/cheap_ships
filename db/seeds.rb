@@ -4,7 +4,9 @@
 # Provavelmente serão necessários após o uso do Cloudinary...
 
 puts "Cleaning up database..."
+Order.destroy_all
 User.destroy_all
+Vehicle.destroy_all
 puts "Database cleaned"
 
 user01 = User.create(full_name: 'Han Solo', address: 'Corellia', email: 'solo_han@wookiemail.com', password: 'leachewie')
