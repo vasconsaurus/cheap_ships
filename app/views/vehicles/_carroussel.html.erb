@@ -13,7 +13,7 @@
       <% vehicles.each_with_index do |vehicle, index| %>
         <div class="carousel-item <%= index.zero? ? "active" : "" %>">
            <% if vehicle.photos.attached? %>
-             <%= cl_image_tag vehicle.photos[0].key, class: "d-block w-100" %>
+             <%= cl_image_tag vehicle.photos[0].key, class: "d-block carroussel-img-size" %>
            <% else %>
              <%= image_tag 'placeholder.jpg', class: "d-block w-100", crop: :fill %>
           <% end %>
