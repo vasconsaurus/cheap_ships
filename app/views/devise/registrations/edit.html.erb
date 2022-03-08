@@ -27,14 +27,12 @@
                 required: true %>
  </div>
 
-  <div class="form-actions btn btn-success">
-    <%= f.button :submit, "Update" %>
+  <div class="form-actions">
+    <%= f.button :submit, "Update", class: "btn-upd btn align-self-end" %>
   </div>
 <% end %>
   <div class="form-actions">
-    <%= link_to "Cancel my account", registration_path(resource_name), class:"btn btn-link", data: { confirm: "Are you sure?" }, method: :delete %>
+    <%= link_to "Cancel my account", registration_path(resource_name), class: "btn-glow-danger btn btn-danger align-self-end mt-3", data: { confirm: "Are you sure?" }, method: :delete %>
   </div>
-  <div class="container">
-    <%= link_to 'Back', root_path, class: "btn btn-dark align-self-end" %>
-  </div>
+  <%= link_to 'Back', root_path, class: "btn-glow btn btn-outline-light align-self-end mt-3" %>
 </div>
