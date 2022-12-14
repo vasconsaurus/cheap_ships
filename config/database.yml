@@ -81,4 +81,7 @@ test:
 #
 production:
   <<: *default
+  database: cheap_ships
+  username: cheap_ships
+  password: <%= ENV['CHEAP_SHIPS_DATABASE_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>
