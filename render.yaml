@@ -1,18 +1,18 @@
 databases:
-  - name: cheap_ships
-    databaseName: cheap_ships
-    user: cheap_ships
+  - name: cheap-ships
+    databaseName: cheap-ships
+    user: cheap-ships
 
 services:
   - type: web
-    name: cheap_ships
+    name: cheap-ships
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: cheap_ships
+          name: cheap-ships
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
