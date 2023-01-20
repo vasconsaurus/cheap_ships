@@ -2,6 +2,7 @@ databases:
   - name: cheap_ships
     databaseName: cheap_ships
     user: cheap_ships
+    plan: free
 
 services:
   - type: web
